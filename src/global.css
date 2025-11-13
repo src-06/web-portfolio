@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Kode Mono';
+  src: url("/assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: 'Veteran Typewriter';
+  src: url("/assets/fonts/veteran_typewriter/veteran typewriter.ttf");
+}
+
+@theme {
+  --font-kode-mono: 'Kode Mono';
+  --font-veteran-typewriter: 'Veteran Typewriter';
+}
