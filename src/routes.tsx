@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion"
 import { Route, Routes, useLocation } from "react-router-dom"
-import { About, Layout, Skills } from "./pages"
+import { About, Contact, Info, Layout, Projects, Skills } from "./pages"
 
 export function BrowserRoutes() {
   const location = useLocation()
@@ -20,11 +20,23 @@ export function BrowserRoutes() {
           <Route
             index
             element={<About />}
-            />
+          />
           <Route
             path="skills"
             element={<Skills />}
-            />
+          />
+          <Route
+            path="projects"
+            element={<Projects />}
+          />
+          <Route
+            path="contact"
+            element={<Contact />}
+          />
+          <Route
+            path="info"
+            element={<Info />}
+          />
         </Route>
       </Routes>
     </AnimatePresence>

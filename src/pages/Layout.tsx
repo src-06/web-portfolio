@@ -1,17 +1,25 @@
-import { CircleCheck, CircleDashed } from "lucide-react"
-import { Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
+import { CircleDashed, CircleDot } from "lucide-react"
 import { useTheme } from "../lib/ThemeProvider"
+import { useFont } from "../lib/FontProvider"
 
 export function Layout() {
-  const navigate = useNavigate()
+  const navigate = useNavigate(),
+    location = useLocation()
 
   const { theme, setTheme } = useTheme()
   const isDark = theme === "dark"
 
+  const { font, setFont } = useFont()
+  const isSans = font === "sans"
+
   return (
     <body
-      className="relative w-screen h-dvh pl-6 pr-6 flex font-kode-mono overflow-hidden"
+      className="relative w-screen h-dvh pl-6 pr-6 flex overflow-hidden"
     >
+      {/* TODO: Web title */}
+      <title>Farell Reyhan Pradana Portfolio</title>
+
       {/* NOTE: Additional buttons */}
       <div
         className="absolute bottom-8 left-6 -rotate-90 origin-bottom-left flex gap-2"
@@ -20,8 +28,8 @@ export function Layout() {
           onClick={() => setTheme("dark")}
           className="flex items-center gap-1"
         >
-          {isDark
-          ? <CircleCheck size={16} />
+          { isDark
+          ? <CircleDot size={16} />
           : <CircleDashed size={16} />
           } Dark
         </button>
@@ -29,10 +37,19 @@ export function Layout() {
           onClick={() => setTheme("light")}
           className="flex items-center gap-1"
         >
-          {isDark
+          { isDark
           ? <CircleDashed size={16} />
-          : <CircleCheck size={16} />
+          : <CircleDot size={16} />
           } Light
+        </button>
+        <button
+          onClick={() => setFont(isSans ? "mono" : "sans")}
+          className="flex items-center gap-1"
+        >
+          { isSans
+          ? <CircleDashed size={16} />
+          : <CircleDot size={16} />
+          } Monospaced
         </button>
       </div>
 
@@ -49,42 +66,79 @@ export function Layout() {
             className="absolute top-0 left-0"
           >
             <h1
-              className="text-2xl"
+              className="text-2xl text-nowrap font-light"
             >Farell Reyhan Pradana</h1>
             <h2
-              className="font-bold leading-3"
+              className="font-bold leading-3 opacity-65"
             >Developer</h2>
           </div>
 
           {/* NOTE: Navigation buttons */}
           <div
-            className="absolute top-20 left-0 flex flex-col items-start gap-2 text-lg font-semibold"
+            className="absolute top-20 left-0 flex flex-col items-start gap-2 text-lg font-light"
           >
             <button
               onClick={() => navigate("/")}
-            >About</button>
+              className="flex items-center gap-1"
+            >
+              { location.pathname === "/"
+              ? <CircleDot size={18} />
+              : <CircleDashed size={18} />
+              } About
+            </button>
             <button
               onClick={() => navigate("/skills")}
-            >Skills</button>
+              className="flex items-center gap-1"
+            >
+              { location.pathname === "/skills"
+              ? <CircleDot size={18} />
+              : <CircleDashed size={18} />
+              } Skills
+            </button>
             <button
               onClick={() => navigate("/projects")}
-            >Projects</button>
+              className="flex items-center gap-1"
+            >
+              { location.pathname === "/projects"
+              ? <CircleDot size={18} />
+              : <CircleDashed size={18} />
+              } Projects
+            </button>
             <button
               onClick={() => navigate("/contact")}
-            >Contact</button>
+              className="flex items-center gap-1"
+            >
+              { location.pathname === "/contact"
+              ? <CircleDot size={18} />
+              : <CircleDashed size={18} />
+              } Contact
+            </button>
             <button
               onClick={() => navigate("/info")}
-            >Info</button>
+              className="flex items-center gap-1"
+            >
+              { location.pathname === "/info"
+              ? <CircleDot size={18} />
+              : <CircleDashed size={18} />
+              } Info
+            </button>
           </div>
         </header>
 
         {/* NOTE: Main sections */}
         <main
           className="h-full"
-        >
-          <Outlet />
-        </main>
+        ><Outlet /></main>
       </div>
+
+      {/* Footer */}
+      <footer
+        className="absolute top-22 right-0.5 rotate-90 origin-top-right"
+      >
+        <p
+          className="text-sm opacity-40"
+        >@src-06</p>
+      </footer>
     </body>
   )
 }

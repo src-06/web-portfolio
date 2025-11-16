@@ -1,6 +1,6 @@
 import { motion } from "framer-motion"
 
-export function Skills() {
+export function Info() {
   return (
     <motion.div
       initial={{
@@ -18,7 +18,7 @@ export function Skills() {
       className="h-full flex items-end"
     >
       {/* TODO: Web title */}
-      <title>Farell Reyhan Pradana Portfolio | Skills</title>
+      <title>Farell Reyhan Pradana Portfolio | Info</title>
 
       <div
         className="max-w-52 ml-auto"
