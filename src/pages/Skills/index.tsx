@@ -1,24 +1,10 @@
 import { BiLogoTailwindCss, BiLogoTypescript } from "react-icons/bi"
 import { DiCss3, DiHtml5, DiReact } from "react-icons/di"
-import { motion } from "framer-motion"
+import { PageTransition } from "../../components"
 
 export function Skills() {
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        x: 20
-      }}
-      animate={{
-        opacity: 1,
-        x: 0
-      }}
-      exit={{
-        opacity: 0,
-        x: 20
-      }}
-      className="h-full flex items-end"
-    >
+    <PageTransition>
       {/* TODO: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Skills</title>
 
@@ -54,6 +40,6 @@ export function Skills() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </PageTransition>
   )
 }

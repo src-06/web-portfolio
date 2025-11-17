@@ -1,23 +1,9 @@
-import { motion } from "framer-motion"
 import { LuGithub, LuGitlab, LuInstagram, LuLinkedin, LuMail } from "react-icons/lu"
+import { PageTransition } from "../../components"
 
 export function Contact() {
   return (
-    <motion.div
-      initial={{
-        opacity: 0,
-        x: 20
-      }}
-      animate={{
-        opacity: 1,
-        x: 0
-      }}
-      exit={{
-        opacity: 0,
-        x: 20
-      }}
-      className="h-full flex items-end"
-    >
+    <PageTransition>
       {/* TODO: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Contact</title>
 
@@ -75,6 +61,6 @@ export function Contact() {
           ><LuInstagram size={26} /></a>
         </p>
       </div>
-    </motion.div>
+    </PageTransition>
   )
 }

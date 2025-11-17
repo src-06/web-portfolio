@@ -6,6 +6,7 @@ import { FontProvider } from "./lib/FontProvider"
 import { BrowserRoutes } from "./routes"
 import "./global.css"
 
+// NOTE: Create root and render react components
 createRoot(document!).render(
   <StrictMode>
     <ThemeProvider>
