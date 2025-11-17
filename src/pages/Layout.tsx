@@ -69,21 +69,21 @@ export function Layout() {
               className="text-2xl text-nowrap font-light"
             >Farell Reyhan Pradana</h1>
             <h2
-              className="font-bold leading-3 opacity-65"
+              className="font-semibold leading-3 opacity-65"
             >Developer</h2>
           </div>
 
           {/* NOTE: Navigation buttons */}
           <div
-            className="absolute top-20 left-0 flex flex-col items-start gap-2 text-lg font-light"
+            className="absolute top-20 left-0 flex flex-col items-start gap-2 font-light"
           >
             <button
               onClick={() => navigate("/")}
               className="flex items-center gap-1"
             >
               { location.pathname === "/"
-              ? <LuCircleDot size={18} />
-              : <LuCircleDashed size={18} />
+              ? <LuCircleDot size={16} />
+              : <LuCircleDashed size={16} />
               } About
             </button>
             <button
@@ -91,8 +91,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/skills"
-              ? <LuCircleDot size={18} />
-              : <LuCircleDashed size={18} />
+              ? <LuCircleDot size={16} />
+              : <LuCircleDashed size={16} />
               } Skills
             </button>
             <button
@@ -100,8 +100,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/projects"
-              ? <LuCircleDot size={18} />
-              : <LuCircleDashed size={18} />
+              ? <LuCircleDot size={16} />
+              : <LuCircleDashed size={16} />
               } Projects
             </button>
             <button
@@ -109,8 +109,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/contact"
-              ? <LuCircleDot size={18} />
-              : <LuCircleDashed size={18} />
+              ? <LuCircleDot size={16} />
+              : <LuCircleDashed size={16} />
               } Contact
             </button>
             <button
@@ -118,8 +118,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/info"
-              ? <LuCircleDot size={18} />
-              : <LuCircleDashed size={18} />
+              ? <LuCircleDot size={16} />
+              : <LuCircleDashed size={16} />
               } Info
             </button>
           </div>

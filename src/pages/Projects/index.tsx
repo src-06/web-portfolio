@@ -21,9 +21,40 @@ export function Projects() {
       <title>Farell Reyhan Pradana Portfolio | Projects</title>
 
       <div
-        className="max-w-52 ml-auto"
+        className="max-w-fit ml-auto overflow-y-scroll scrollbar-transparent"
       >
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, quos. Officiis soluta dicta, et voluptate, iusto quod repellendus culpa mollitia consequuntur, ipsam maxime? Debitis vero sit amet nemo asperiores non.</p>
+        <div
+          className="my-[50dvh] flex flex-col gap-y-4"
+        >
+          <div
+            className="text-right"
+          >
+            <div
+              className="max-w-52 ml-auto text-2xl font-light leading-6.5"
+            >
+              <a
+                href="#"
+              >Projects Title 1 Lorem ipsum dolor sit.</a>
+            </div>
+            <p
+              className="text-xs font-semibold leading-4"
+            >Oct 2025 / Dev & Design</p>
+          </div>
+          <div
+            className="text-right"
+          >
+            <div
+              className="max-w-52 ml-auto text-2xl font-light leading-6.5"
+            >
+              <a
+                href="#"
+              >Projects Title 1</a>
+            </div>
+            <p
+              className="text-xs font-semibold leading-4"
+            >Oct 2025 / Dev / Design: <a href="#">Xione Qatsu</a></p>
+          </div>
+        </div>
       </div>
     </motion.div>
   )

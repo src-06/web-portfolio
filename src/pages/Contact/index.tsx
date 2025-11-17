@@ -22,7 +22,7 @@ export function Contact() {
       <title>Farell Reyhan Pradana Portfolio | Contact</title>
 
       <div
-        className="max-w-52 ml-auto mr-8 mb-8 flex gap-5"
+        className="max-w-52 ml-auto mr-6 mb-8 flex gap-4"
       >
 
         {/* NOTE: Email */}
@@ -32,7 +32,7 @@ export function Contact() {
           <a
             href="mailto:gotthardleoreceive@gmail.com"
             target="_blank"
-          ><LuMail size={30} /></a>
+          ><LuMail size={26} /></a>
         </p>
 
         {/* NOTE: LinkedIn */}
@@ -42,7 +42,7 @@ export function Contact() {
           <a
             href="https://www.linkedin.com/in/farell-reyhan-pradana"
             target="_blank"
-          ><LuLinkedin size={30} /></a>
+          ><LuLinkedin size={26} /></a>
         </p>
 
         {/* NOTE: GitHub */}
@@ -52,7 +52,7 @@ export function Contact() {
           <a
             href="https://github.com/src-06"
             target="_blank"
-          ><LuGithub size={30} /></a>
+          ><LuGithub size={26} /></a>
         </p>
 
         {/* NOTE: GitLab */}
@@ -62,7 +62,7 @@ export function Contact() {
           <a
             href="https://gitlab.com/src-06"
             target="_blank"
-          ><LuGitlab size={30} /></a>
+          ><LuGitlab size={26} /></a>
         </p>
 
         {/* NOTE: Instagram */}
@@ -72,7 +72,7 @@ export function Contact() {
           <a
             href="https://www.instagram.com/src06leo"
             target="_blank"
-          ><LuInstagram size={30} /></a>
+          ><LuInstagram size={26} /></a>
         </p>
       </div>
     </motion.div>
