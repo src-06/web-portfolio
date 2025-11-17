@@ -8,6 +8,7 @@ export function Skills() {
       {/* TODO: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Skills</title>
 
+      {/* NOTE: Skill contents */}
       <div
         className="max-w-52 max-h-full ml-auto overflow-y-scroll scrollbar-transparent"
       >

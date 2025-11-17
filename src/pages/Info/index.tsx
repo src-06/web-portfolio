@@ -6,6 +6,7 @@ export function Info() {
       {/* TODO: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Info</title>
 
+      {/* NOTE: Info contents */}
       <div
         className="max-w-52 ml-auto"
       >

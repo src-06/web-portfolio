@@ -1,5 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom"
-import { LuCircleDashed, LuCircleDot } from "react-icons/lu"
+import { motion } from "framer-motion"
+
+const navMenu = ["About", "Skills", "Projects", "Contact", "Info"]
 
 export function Header() {
   const navigate = useNavigate(),
@@ -25,51 +27,59 @@ export function Header() {
       <div
         className="absolute top-20 left-0 flex flex-col items-start gap-2 font-light"
       >
-        <button
-          onClick={() => navigate("/")}
-          className="flex items-center gap-1"
-        >
-          { location.pathname === "/"
-          ? <LuCircleDot size={16} />
-          : <LuCircleDashed size={16} />
-          } About
-        </button>
-        <button
-          onClick={() => navigate("/skills")}
-          className="flex items-center gap-1"
-        >
-          { location.pathname === "/skills"
-          ? <LuCircleDot size={16} />
-          : <LuCircleDashed size={16} />
-          } Skills
-        </button>
-        <button
-          onClick={() => navigate("/projects")}
-          className="flex items-center gap-1"
-        >
-          { location.pathname === "/projects"
-          ? <LuCircleDot size={16} />
-          : <LuCircleDashed size={16} />
-          } Projects
-        </button>
-        <button
-          onClick={() => navigate("/contact")}
-          className="flex items-center gap-1"
-        >
-          { location.pathname === "/contact"
-          ? <LuCircleDot size={16} />
-          : <LuCircleDashed size={16} />
-          } Contact
-        </button>
-        <button
-          onClick={() => navigate("/info")}
-          className="flex items-center gap-1"
-        >
-          { location.pathname === "/info"
-          ? <LuCircleDot size={16} />
-          : <LuCircleDashed size={16} />
-          } Info
-        </button>
+        { navMenu.map((menu, index) => {
+          const pathnameMenu = "/"+(menu === "About" ? "" : menu)
+          const isPage = location.pathname === pathnameMenu
+
+          return (
+            <button
+              key={index}
+              onClick={() => navigate(pathnameMenu)}
+              className="flex items-center gap-1"
+            >
+              { isPage
+              ? <div
+                  className="relative"
+                >
+                  <motion.div
+                    initial={{
+                      scale: 0
+                    }}
+                    animate={{
+                      scale: 1
+                    }}
+                    exit={{
+                      scale: 0
+                    }}
+                    className="absolute top-0 left-0 w-2 h-2 my-2 bg-current rounded-full"
+                  />
+                  <motion.p
+                    initial={{
+                      scale: 1,
+                      x: 0
+                    }}
+                    animate={{
+                      scale: 0,
+                      x: -20
+                    }}
+                    exit={{
+                      scale: 1,
+                      x: 0
+                    }}
+                  >{menu}</motion.p>
+                </div>
+              : <motion.p
+                  initial={{
+                    x: 0
+                  }}
+                  whileHover={{
+                    x: 10
+                  }}
+                >{menu}</motion.p>
+              }
+            </button>
+          )
+        })}
       </div>
     </header>
   )

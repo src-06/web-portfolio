@@ -6,6 +6,7 @@ export function Projects() {
       {/* TODO: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Projects</title>
 
+      {/* NOTE: Project contents */}
       <div
         className="max-w-fit ml-auto overflow-y-scroll scrollbar-transparent"
       >
