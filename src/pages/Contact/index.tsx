@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Github, Gitlab, Instagram, Linkedin, Mail } from "lucide-react"
+import { LuGithub, LuGitlab, LuInstagram, LuLinkedin, LuMail } from "react-icons/lu"
 
 export function Contact() {
   return (
@@ -32,7 +32,7 @@ export function Contact() {
           <a
             href="mailto:gotthardleoreceive@gmail.com"
             target="_blank"
-          ><Mail size={30} /></a>
+          ><LuMail size={30} /></a>
         </p>
 
         {/* NOTE: LinkedIn */}
@@ -42,7 +42,7 @@ export function Contact() {
           <a
             href="https://www.linkedin.com/in/farell-reyhan-pradana"
             target="_blank"
-          ><Linkedin size={30} /></a>
+          ><LuLinkedin size={30} /></a>
         </p>
 
         {/* NOTE: GitHub */}
@@ -52,17 +52,17 @@ export function Contact() {
           <a
             href="https://github.com/src-06"
             target="_blank"
-          ><Github size={30} /></a>
+          ><LuGithub size={30} /></a>
         </p>
 
-        {/* NOTE: Gitlab */}
+        {/* NOTE: GitLab */}
         <p
           className="flex items-center gap-1"
         >
           <a
             href="https://gitlab.com/src-06"
             target="_blank"
-          ><Gitlab size={30} /></a>
+          ><LuGitlab size={30} /></a>
         </p>
 
         {/* NOTE: Instagram */}
@@ -72,7 +72,7 @@ export function Contact() {
           <a
             href="https://www.instagram.com/src06leo"
             target="_blank"
-          ><Instagram size={30} /></a>
+          ><LuInstagram size={30} /></a>
         </p>
       </div>
     </motion.div>

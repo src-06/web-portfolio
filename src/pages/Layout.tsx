@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from "react-router-dom"
-import { CircleDashed, CircleDot } from "lucide-react"
+import { LuCircleDashed, LuCircleDot } from "react-icons/lu"
 import { useTheme } from "../lib/ThemeProvider"
 import { useFont } from "../lib/FontProvider"
 
@@ -29,8 +29,8 @@ export function Layout() {
           className="flex items-center gap-1"
         >
           { isDark
-          ? <CircleDot size={16} />
-          : <CircleDashed size={16} />
+          ? <LuCircleDot size={16} />
+          : <LuCircleDashed size={16} />
           } Dark
         </button>
         <button
@@ -38,8 +38,8 @@ export function Layout() {
           className="flex items-center gap-1"
         >
           { isDark
-          ? <CircleDashed size={16} />
-          : <CircleDot size={16} />
+          ? <LuCircleDashed size={16} />
+          : <LuCircleDot size={16} />
           } Light
         </button>
         <button
@@ -47,8 +47,8 @@ export function Layout() {
           className="flex items-center gap-1"
         >
           { isSans
-          ? <CircleDashed size={16} />
-          : <CircleDot size={16} />
+          ? <LuCircleDashed size={16} />
+          : <LuCircleDot size={16} />
           } Monospaced
         </button>
       </div>
@@ -82,8 +82,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/"
-              ? <CircleDot size={18} />
-              : <CircleDashed size={18} />
+              ? <LuCircleDot size={18} />
+              : <LuCircleDashed size={18} />
               } About
             </button>
             <button
@@ -91,8 +91,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/skills"
-              ? <CircleDot size={18} />
-              : <CircleDashed size={18} />
+              ? <LuCircleDot size={18} />
+              : <LuCircleDashed size={18} />
               } Skills
             </button>
             <button
@@ -100,8 +100,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/projects"
-              ? <CircleDot size={18} />
-              : <CircleDashed size={18} />
+              ? <LuCircleDot size={18} />
+              : <LuCircleDashed size={18} />
               } Projects
             </button>
             <button
@@ -109,8 +109,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/contact"
-              ? <CircleDot size={18} />
-              : <CircleDashed size={18} />
+              ? <LuCircleDot size={18} />
+              : <LuCircleDashed size={18} />
               } Contact
             </button>
             <button
@@ -118,8 +118,8 @@ export function Layout() {
               className="flex items-center gap-1"
             >
               { location.pathname === "/info"
-              ? <CircleDot size={18} />
-              : <CircleDashed size={18} />
+              ? <LuCircleDot size={18} />
+              : <LuCircleDashed size={18} />
               } Info
             </button>
           </div>

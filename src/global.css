@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "tailwind-scrollbar";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -15,4 +16,17 @@
 @theme {
   --font-sans: 'Montserrat';
   --font-mono: 'Kode Mono';
+}
+
+@layer base {
+  html,
+  body {
+    @apply select-none;
+  }
+}
+
+@layer components {
+  .scrollbar-transparent {
+    scrollbar-width: none;
+  }
 }
