@@ -1,17 +1,16 @@
-import { PageTransition } from "../../components"
 
 export function Info() {
   return (
-    <PageTransition>
-      {/* TODO: Web title */}
+    <>
+      {/* NOTE: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Info</title>
 
       {/* NOTE: Info contents */}
       <div
-        className="max-w-52 ml-auto"
+        className="max-w-52 md:max-w-60 ml-auto"
       >
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, quos. Officiis soluta dicta, et voluptate, iusto quod repellendus culpa mollitia consequuntur, ipsam maxime? Debitis vero sit amet nemo asperiores non.</p>
+        <p>This website takes inspiration from the portfolio website of "<a href='https://p5aholic.me/' target='_blank' className='underline font-bold hover:text-current/50 transition-all duration-200'>Keita Yamada's</a>". I built this website with Tailwind CSS, Vite, React, React Router and Framer Motion</p>
       </div>
-    </PageTransition>
+    </>
   )
 }

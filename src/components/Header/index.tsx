@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 
-const navMenu = ["About", "Skills", "Projects", "Contact", "Info"]
+const navMenu = ["About", "Tools & Stack", "Projects", "Contact", "Info"]
 
 export function Header() {
   const navigate = useNavigate(),
@@ -16,11 +16,11 @@ export function Header() {
         className="absolute top-0 left-0"
       >
         <h1
-          className="text-2xl text-nowrap font-light"
+          className="text-2xl md:text-3xl xl:text-4xl text-nowrap font-light"
         >Farell Reyhan Pradana</h1>
         <h2
-          className="font-semibold leading-3 opacity-65"
-        >Developer</h2>
+          className="font-semibold leading-3"
+        >Website Developer</h2>
       </div>
 
       {/* NOTE: Navigation buttons */}
@@ -28,7 +28,7 @@ export function Header() {
         className="absolute top-20 left-0 flex flex-col items-start gap-2 font-light"
       >
         { navMenu.map((menu, index) => {
-          const pathnameMenu = "/"+(menu === "About" ? "" : menu)
+          const pathnameMenu = "/"+(menu === "About" ? "" : menu.toLowerCase().replace(" & ", "&"))
           const isPage = location.pathname === pathnameMenu
 
           return (
@@ -60,7 +60,7 @@ export function Header() {
                     }}
                     animate={{
                       scale: 0,
-                      x: -20
+                      x: menu.match("&") ? -40 : -20
                     }}
                     exit={{
                       scale: 1,

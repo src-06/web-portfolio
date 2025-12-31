@@ -1,17 +1,16 @@
-import { PageTransition } from "../../components"
 
 export function About() {
   return (
-    <PageTransition>
-      {/* TODO: Web title */}
+    <>
+      {/* NOTE: Web title */}
       <title>Farell Reyhan Pradana Portfolio | About</title>
 
       {/* NOTE: About contents */}
       <div
-        className="max-w-52 ml-auto"
+        className="max-w-52 md:max-w-60 ml-auto"
       >
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni, quos. Officiis soluta dicta, et voluptate, iusto quod repellendus culpa mollitia consequuntur, ipsam maxime? Debitis vero sit amet nemo asperiores non.</p>
+        <p>Hi, my name is <strong>Farell Reyhan Pradana</strong> 🖐️. I'm an IT student majoring in software engineering and I'm still learning more about website development and design.</p>
       </div>
-    </PageTransition>
+    </>
   )
 }

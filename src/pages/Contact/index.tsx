@@ -1,8 +1,12 @@
 import { motion } from "framer-motion"
 import { LuGithub, LuGitlab, LuInstagram, LuLinkedin, LuMail } from "react-icons/lu"
-import { PageTransition } from "../../components"
 
-const contactList = [
+interface ContactListProps {
+  icon: React.ReactNode
+  link: string
+}
+
+const ContactList: ContactListProps[] = [
   {
     icon: <LuMail size={26} />,
     link: "mailto:gotthardleoreceive@gmail.com"
@@ -27,15 +31,15 @@ const contactList = [
 
 export function Contact() {
   return (
-    <PageTransition>
-      {/* TODO: Web title */}
+    <>
+      {/* NOTE: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Contact</title>
 
       {/* NOTE: Contact contents */}
       <div
-        className="max-w-52 ml-auto mr-6 mb-8 flex gap-4"
+        className="max-w-52 md:max-w-60 ml-auto mr-6 mb-8 flex flex-col gap-y-6"
       >
-        { contactList.map((list, index) =>
+        { ContactList.map((list, index) =>
           <motion.a
             key={index}
             initial={{
@@ -55,6 +59,6 @@ export function Contact() {
           >{list.icon}</motion.a>
         )}
       </div>
-    </PageTransition>
+    </>
   )
 }

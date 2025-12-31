@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom"
-import { Footer, Header, ThemeButton } from "../components"
+import { Footer, Header, PageTransition, ThemeButton } from "@/components"
 
 export function Layout() {
   return (
     <body
-      className="relative w-screen h-dvh pl-6 pr-6 flex overflow-hidden"
+      className="relative w-screen h-dvh p-6 flex overflow-hidden md:text-lg xl:text-xl"
     >
-      {/* TODO: Web title */}
+      {/* NOTE: Web title */}
       <title>Farell Reyhan Pradana Portfolio</title>
 
       {/* NOTE: Theme buttons */}
@@ -14,15 +14,13 @@ export function Layout() {
 
       {/* NOTE: Contents */}
       <div
-        className="w-full h-full p-2 border-l-2 border-r-2 border-dotted"
+        className="w-full h-full p-2 md:p-3 xl:p-5 border-2 rounded-md"
       >
         {/* NOTE: Header sections */}
         <Header />
 
         {/* NOTE: Main sections */}
-        <main
-          className="h-full"
-        ><Outlet /></main>
+        <PageTransition><Outlet /></PageTransition>
       </div>
 
       {/* NOTE: Footer sections */}

@@ -1,48 +1,73 @@
-import { PageTransition } from "../../components"
+
+interface ProjectProps {
+  title: string
+  date: string
+  url: string
+  design?: ProjectDesignProps
+}
+
+interface ProjectDesignProps {
+  name: string
+  url?: string
+}
+
+const ProjectList: ProjectProps[] = [
+  {
+    title: "Project 2",
+    date: "Dec 2025",
+    url: "https://xioneqatsu.github.io/",
+    design: {
+      name: "Xione Qatsu",
+      url: "https://github.com/xioneqatsu"
+    }
+  }
+]
 
 export function Projects() {
   return (
-    <PageTransition>
-      {/* TODO: Web title */}
+    <>
+      {/* NOTE: Web title */}
       <title>Farell Reyhan Pradana Portfolio | Projects</title>
 
       {/* NOTE: Project contents */}
       <div
-        className="max-w-fit ml-auto overflow-y-scroll scrollbar-transparent"
+        className="max-w-fit max-h-full ml-auto"
       >
         <div
-          className="my-[50dvh] flex flex-col gap-y-4"
+          className="max-h-[90dvh] mt-auto pb-[60dvh] flex flex-col gap-y-4 overflow-y-scroll scrollbar-none"
         >
-          <div
-            className="text-right"
-          >
+          {ProjectList.map((project, index) =>
             <div
-              className="max-w-52 ml-auto text-2xl font-light leading-6.5"
+              key={index}
+              className="text-right"
             >
-              <a
-                href="#"
-              >Projects Title 1 Lorem ipsum dolor sit.</a>
+              <div
+                className="max-w-52 md:max-w-60 ml-auto text-2xl md:text-3xl font-bold leading-6.5"
+              >
+                <a
+                  href={project.url}
+                  className="hover:underline"
+                >{project.title}</a>
+              </div>
+              <p
+                className="text-xs md:text-sm font-semibold leading-4 md:leading-6 opacity-50"
+              >
+                {project.date} / Dev
+                { project.design
+                ? <span> / Design:{" "}
+                    <a
+                      key={index}
+                      href={project.design.url}
+                      className="hover:underline"
+                    >{project.design.name}</a>
+                  </span>
+                : <span> & Design</span>
+                }
+              </p>
             </div>
-            <p
-              className="text-xs font-semibold leading-4"
-            >Oct 2025 / Dev & Design</p>
-          </div>
-          <div
-            className="text-right"
-          >
-            <div
-              className="max-w-52 ml-auto text-2xl font-light leading-6.5"
-            >
-              <a
-                href="#"
-              >Projects Title 1</a>
-            </div>
-            <p
-              className="text-xs font-semibold leading-4"
-            >Oct 2025 / Dev / Design: <a href="#">Xione Qatsu</a></p>
-          </div>
+          )}
         </div>
       </div>
-    </PageTransition>
+    </>
   )
 }

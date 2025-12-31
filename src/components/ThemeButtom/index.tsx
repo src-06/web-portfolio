@@ -1,17 +1,17 @@
 import { LuCircleDashed, LuCircleDot } from "react-icons/lu"
-import { useFont } from "../../lib/FontProvider"
-import { useTheme } from "../../lib/ThemeProvider"
+import { useFont } from "~/FontProvider"
+import { useTheme } from "~/ThemeProvider"
 
 export function ThemeButton() {
-  const { theme, setTheme } = useTheme()
-  const isDark = theme === "dark"
+  const { theme, setTheme } = useTheme(),
+    { font, setFont } = useFont()
 
-  const { font, setFont } = useFont()
-  const isSans = font === "sans"
+  const isDark = theme === "dark",
+    isSans = font === "sans"
 
   return (
     <div
-      className="absolute bottom-8 left-6 -rotate-90 origin-bottom-left flex gap-2"
+      className="absolute bottom-8 left-6 md:left-6.5 -rotate-90 origin-bottom-left flex gap-2"
     >
       <button
         onClick={() => setTheme("dark")}

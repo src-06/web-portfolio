@@ -6,7 +6,7 @@ export function PageTransition({
   children: React.ReactNode
 }) {
   return (
-    <motion.div
+    <motion.main
       initial={{
         opacity: 0,
         x: 20
@@ -20,6 +20,6 @@ export function PageTransition({
         x: 20
       }}
       className="h-full flex items-end"
-    >{children}</motion.div>
+    >{children}</motion.main>
   )
 }
