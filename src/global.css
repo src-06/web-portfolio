@@ -12,15 +12,27 @@
   src: url("/assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf");
 }
 
+:root {
+  --bg: theme(colors.stone.200);
+  --fg: theme(colors.stone.800);
+}
+
+.dark {
+  --bg: theme(colors.stone.900);
+  --fg: theme(colors.stone.300);
+}
+
 @theme {
   --font-sans: 'Montserrat';
   --font-mono: 'Kode Mono';
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
 }
 
 @layer base {
   html,
   body {
-    @apply select-none;
+    @apply text-fg bg-bg border-fg outline-fg select-none transition-colors;
   }
 }
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 interface ProjectProps {
   title: string
@@ -13,8 +14,8 @@ interface ProjectDesignProps {
 
 const ProjectList: ProjectProps[] = [
   {
-    title: "Project 2",
-    date: "Dec 2025",
+    title: "Xione Qatsu",
+    date: "Jun 2021",
     url: "https://xioneqatsu.github.io/",
     design: {
       name: "Xione Qatsu",
@@ -42,24 +43,26 @@ export function Projects() {
               className="text-right"
             >
               <div
-                className="max-w-52 md:max-w-60 ml-auto text-2xl md:text-3xl font-bold leading-6.5"
+                className="max-w-52 md:max-w-60 ml-auto text-2xl md:text-3xl font-bold"
               >
-                <a
-                  href={project.url}
+                <Link
+                  to={project.url}
+                  target="_blank"
                   className="hover:underline"
-                >{project.title}</a>
+                >{project.title}</Link>
               </div>
               <p
-                className="text-xs md:text-sm font-semibold leading-4 md:leading-6 opacity-50"
+                className="text-xs md:text-sm text-current/50 font-semibold leading-4"
               >
                 {project.date} / Dev
                 { project.design
                 ? <span> / Design:{" "}
-                    <a
+                    <Link
                       key={index}
-                      href={project.design.url}
-                      className="hover:underline"
-                    >{project.design.name}</a>
+                      to={project.design.url || ''}
+                      target="_blank"
+                      className="hover:text-fg hover:underline transition-colors"
+                    >{project.design.name}</Link>
                   </span>
                 : <span> & Design</span>
                 }
